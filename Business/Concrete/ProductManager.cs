@@ -39,7 +39,7 @@ namespace Business.Concrete
         }
 
         //[LogAspect]//bu metodu logla AOP
-        //[SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add,admin")]// .aproductdd veya admin olmalı
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]//oradaki tüm getleri siler
         public IResult Add(Product product)
